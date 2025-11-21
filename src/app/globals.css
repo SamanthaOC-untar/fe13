@@ -1,33 +1,27 @@
+/* ========= Root & Global ========= */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  /* Ungu pastel + pink */
+  --primary-color: #a78bfa;       /* ungu pastel utama */
+  --accent-color: #ec4899;        /* pink tombol (tetap) */
+  --accent-color-dark: #db2777;
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-} */
+  --bg-page: #faf5ff;             /* background halaman ungu pastel lembut */
+  --bg-section: #ffffff;
+  --text-main: #1f2933;
+  --text-muted: #6b7280;
+
+  --radius-lg: 16px;
+  --shadow-soft: 0 12px 30px rgba(15, 23, 42, 0.12);
+}
 
 html,
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  color: var(--text-main);
+  background-color: var(--bg-page);
 }
 
 a {
@@ -35,9 +29,309 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+.page-wrapper {
+  min-height: 100vh;
+  background: radial-gradient(circle at top right, #e9d5ff 0, #fdf2ff 55%);
+}
+
+/* ========= Navbar ========= */
+
+.navbar-custom {
+  background-color: #ffffff;
+  backdrop-filter: blur(12px);
+}
+
+.navbar-brand-custom {
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.navbar-links .nav-link {
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.navbar-links .nav-link:hover {
+  color: var(--primary-color);
+  transform: translateY(-1px);
+}
+
+.navbar-search input {
+  border-radius: 999px;
+}
+
+/* ========= Hero ========= */
+
+.hero-section {
+  position: relative;
+  border-radius: 0 0 32px 32px;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+}
+
+.hero-slide {
+  position: relative;
+}
+
+.hero-background {
+  height: 60vh;
+  background-size: cover;
+  background-position: center;
+}
+
+/* overlay ungu pastel transparan */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(167, 139, 250, 0.7),
+    rgba(249, 168, 212, 0.4)
+  );
+}
+
+.hero-caption {
+  bottom: 20%;
+  text-align: left;
+}
+
+.hero-title {
+  font-weight: 700;
+  font-size: clamp(2.4rem, 4vw, 3.2rem);
+}
+
+.hero-subtitle {
+  max-width: 520px;
+  font-size: 1.05rem;
+}
+
+/* ========= Reusable section styles ========= */
+
+.section-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.8rem;
+  color: var(--primary-color);
+  margin-bottom: 0.4rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.section-text {
+  color: var(--text-muted);
+  max-width: 620px;
+}
+
+/* ========= About ========= */
+
+.about-section {
+  margin-top: 3rem;
+}
+
+.about-image-wrapper {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+}
+
+.about-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* ========= Work (nuansa ungu pastel terang) ========= */
+
+.work-section-wrapper {
+  background-color: #ede9fe;      /* ungu pastel muda */
+  padding: 4rem 0;
+  margin-top: 2rem;
+}
+
+.work-section {
+  color: var(--text-main);
+}
+
+.work-card {
+  border: 1px solid #ddd6fe;      /* border ungu pastel */
+  background-color: #ffffff;
+  color: var(--text-main);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+  border-radius: 18px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.work-card img {
+  height: 220px;
+  object-fit: cover;
+  border-radius: 18px 18px 0 0;
+}
+
+.work-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 32px rgba(79, 70, 229, 0.25);
+}
+
+.work-card-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+/* ========= Services ========= */
+
+.service-section-wrapper {
+  padding: 4rem 0 3rem;
+}
+
+/* gradient pastel sangat lembut */
+.service-section {
+  background: linear-gradient(135deg, #fdf2ff, #ede9fe);
+  border-radius: 32px;
+  box-shadow: var(--shadow-soft);
+}
+
+.service-card {
+  border-radius: 20px;
+  background-color: #ffffff;
+  padding-inline: 1.5rem;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.service-card img {
+  max-height: 140px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 1rem;
+}
+
+.service-card h3 {
+  font-size: 1.2rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0.4rem;
+}
+
+.service-card p {
+  color: var(--text-muted);
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 30px rgba(129, 140, 248, 0.28);
+}
+
+/* ========= Contact ========= */
+
+.contact-section-wrapper {
+  padding: 4rem 0 5rem;
+}
+
+.contact-section {
+  max-width: 960px;
+}
+
+.contact-card {
+  border-radius: 24px;
+  border: none;
+  background: radial-gradient(circle at top, #fdf2ff, #ffffff 60%);
+  box-shadow: var(--shadow-soft);
+}
+
+/* ========= Buttons ========= */
+
+.btn-accent {
+  background: var(--accent-color);       /* pink tetap */
+  border: none;
+  color: #f9fafb;
+  font-weight: 600;
+  padding-inline: 1.5rem;
+  border-radius: 999px;
+  transition: background 0.2s ease, transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.btn-accent:hover,
+.btn-accent:focus {
+  background: var(--accent-color-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 25px rgba(236, 72, 153, 0.4);
+}
+
+/* ========= Footer (ungu pastel muda) ========= */
+
+.footer-section {
+  background-color: #f5e9ff;      /* ungu pastel muda */
+  color: #111827;
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+}
+
+.footer-section .footer-title {
+  color: #111827;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.footer-section .footer-links li + li {
+  margin-top: 0.35rem;
+}
+
+.footer-section .footer-links a {
+  color: #111827;
+  font-size: 0.95rem;
+}
+
+.footer-section .footer-links a:hover {
+  color: #7c3aed;                 /* ungu sedikit lebih tua saat hover */
+}
+
+.footer-section .footer-input {
+  background-color: #ffffff;
+  border-color: #d1d5db;
+  color: #111827;
+}
+
+.footer-section .footer-input::placeholder {
+  color: #9ca3af;
+}
+
+.footer-section .footer-social a {
+  color: #111827;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.footer-section .footer-social a:hover {
+  color: var(--accent-color);     /* pink saat hover */
+  transform: translateY(-2px);
+}
+
+.footer-section .footer-copy {
+  color: #4b5563;
+}
+
+.footer-section .border-top {
+  border-top-color: #e5e7eb !important;
+}
+
+/* ========= Responsive tweak ========= */
+
+@media (max-width: 767.98px) {
+  .hero-caption {
+    bottom: 12%;
+    text-align: center;
+  }
+
+  .hero-subtitle {
+    margin-inline: auto;
+  }
+
+  .service-section {
+    border-radius: 24px;
   }
 }
 

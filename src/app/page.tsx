@@ -16,47 +16,60 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div>
+    <div className="page-wrapper">
       <Navbar />
       <main>
         <Hero />
 
-        <Container className="my-5">
-          <Row className="my-4">
-            <Col md={7} className="align-self-center mb-3">
-              <h2>About Us</h2>
-              <h6>What we do?</h6>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, deleniti dolorum! Libero accusantium est commodi nisi, earum enim quis ut. Veniam molestiae placeat esse autem.
-              </p>
-              <Button variant="info">Learn More</Button>
-            </Col>
+        {/* ABOUT */}
+        <section id="about" className="about-section">
+          <Container className="my-5">
+            <Row className="my-4 align-items-center">
+              <Col md={7} className="mb-3">
+                <h6 className="section-eyebrow">About Us</h6>
+                <h2 className="section-title">What We Do</h2>
+                <p className="section-text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Itaque, deleniti dolorum! Libero accusantium est commodi nisi,
+                  earum enim quis ut. Veniam molestiae placeat esse autem.
+                </p>
+                <Button variant="light" className="btn-accent">
+                  Learn More
+                </Button>
+              </Col>
 
-            <Col md={5}>
-            <p>
-              <Image src = "/images/about.jpeg" alt="About Us" width={400} height={400}>
-              </Image>
-            </p>
-            </Col>
-          </Row>
-        </Container>
+              <Col md={5} className="mb-3">
+                <div className="about-image-wrapper">
+                  <Image
+                    src="/images/about.jpeg"
+                    alt="About Us"
+                    width={400}
+                    height={400}
+                    className="about-image"
+                  />
+                </div>
+              </Col>
+            </Row>
+          </Container>
+        </section>
 
-        <section className="bg-dark">
+        {/* WORK */}
+        <section id="work" className="work-section-wrapper">
           <WorkSection />
         </section>
-        
 
-        <ServiceSection/>
-  
-      
-
-        <section id="contact">
-          <ContactSection/>
+        {/* SERVICES */}
+        <section id="services" className="service-section-wrapper">
+          <ServiceSection />
         </section>
-       
+
+        {/* CONTACT */}
+        <section id="contact" className="contact-section-wrapper">
+          <ContactSection />
+        </section>
       </main>
 
-    <Footer/>
+      <Footer />
     </div>
-  )
+  );
 }

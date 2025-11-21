@@ -1,74 +1,123 @@
-'use client'
-import {Container, Row, Col, Form, Button, InputGroup} from "react-bootstrap";
-import 'bootstrap-icons/font/bootstrap-icons.css';
+"use client";
+import { Container, Row, Col, Form, Button, InputGroup } from "react-bootstrap";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
-export default function Footer(){
-    return(
-        <footer id="footer" className="pt-md-5 pd-md-2 py-3 bg-light">
-            <Container>
-                <Row>
-                    {/* Our Products */}
-                    <Col md={3}>
-                        <h3>Our Products</h3>
-                        <ul className="list-unstyled">
-                            <li className="mb-2"><a href="#">Account</a></li>
-                            <li className="mb-2"><a href="#">Bundle</a></li>
-                            <li className="mb-2"><a href="#">Blog</a></li>
-                            <li className="mb-2"><a href="#">Contact</a></li>
-                            <li className="mb-2"><a href="#">Circular</a></li>
-                        </ul>
-                    </Col>
-                    {/* Quick Link */}
-                    <Col md ={3}>
-                        <h3>Quick Link</h3>
-                        <ul className="list-unstyled">
-                            <li className="mb-2"><a href="#">Home</a></li>
-                            <li className="mb-2"><a href="#">About Us</a></li>
-                            <li className="mb-2"><a href="#">Service</a></li>
-                            <li className="mb-2"><a href="#">Work</a></li>
-                            <li className="mb-2"><a href="#">Products</a></li>
-                        </ul>
-                    </Col>
-                    {/* Terms */}
-                    <Col md ={3}>
-                        <h3>Quick Link</h3>
-                        <ul className="list-unstyled">
-                            <li className="mb-2"><a href="#">Refund Policy</a></li>
-                            <li className="mb-2"><a href="#">Privacy Policy</a></li>
-                            <li className="mb-2"><a href="#">License</a></li>
-                        </ul>
-                    </Col>
-                    {/* Search + Social */}
-                    <Col md= {3}>
-                        <h3>Search Here</h3>
-                        <Form className="mb3">
-                            <InputGroup>
-                                <Form.Control type="text" placeholder="Search Here"/>
-                                <Button variant="Info">Search</Button>
-                           
-                            </InputGroup>
-                        </Form>
-                        <br></br>
-                        <h3>Follow Us</h3>
-                        <ul className="list-unstyled d-flex gap-3">
-                            <li><a href="#"><i className="bi bi-facebook fs-4"></i></a></li>
-                            <li><a href="#"><i className="bi bi-twitter fs-4"></i></a></li>
-                            <li><a href="#"><i className="bi bi-instagram fs-4"></i></a></li>
-                            <li><a href="#"><i className="bi bi-youtube fs-4"></i></a></li>
-                            <li><a href="#"><i className="bi bi-pinterest fs-4"></i></a></li>
-                        </ul>
-                    </Col>
-                    {/* Copy Right */}
-                    <Row className="mt-3">
-                        <Col md={12} className="text-center">
-                            <hr></hr>
-                            <p className="mb-0">&copy; 2025 Samantha Oprah Colin. All rights reserved.</p>
-                        </Col>
-                    </Row>
+export default function Footer() {
+  return (
+    <footer id="footer" className="footer-section">
+      <Container>
+        <Row className="gy-4">
+          <Col md={3}>
+            <h3 className="footer-title">Our Products</h3>
+            <ul className="list-unstyled footer-links">
+              <li>
+                <a href="#">Account</a>
+              </li>
+              <li>
+                <a href="#">Bundle</a>
+              </li>
+              <li>
+                <a href="#">Blog</a>
+              </li>
+              <li>
+                <a href="#">Contact</a>
+              </li>
+              <li>
+                <a href="#">Circular</a>
+              </li>
+            </ul>
+          </Col>
 
-        
-                </Row>
-            </Container>
-        </footer>
-    )
+          <Col md={3}>
+            <h3 className="footer-title">Quick Link</h3>
+            <ul className="list-unstyled footer-links">
+              <li>
+                <a href="#hero">Home</a>
+              </li>
+              <li>
+                <a href="#about">About Us</a>
+              </li>
+              <li>
+                <a href="#services">Service</a>
+              </li>
+              <li>
+                <a href="#work">Work</a>
+              </li>
+              <li>
+                <a href="#">Products</a>
+              </li>
+            </ul>
+          </Col>
+
+          <Col md={3}>
+            <h3 className="footer-title">Terms</h3>
+            <ul className="list-unstyled footer-links">
+              <li>
+                <a href="#">Refund Policy</a>
+              </li>
+              <li>
+                <a href="#">Privacy Policy</a>
+              </li>
+              <li>
+                <a href="#">License</a>
+              </li>
+            </ul>
+          </Col>
+
+          <Col md={3}>
+            <h3 className="footer-title">Search Here</h3>
+            <Form className="mb-3">
+              <InputGroup>
+                <Form.Control
+                  type="text"
+                  placeholder="Search Here"
+                  className="footer-input"
+                />
+                <Button variant="outline-light" className="btn-accent">
+                  Search
+                </Button>
+              </InputGroup>
+            </Form>
+
+            <h3 className="footer-title mt-3">Follow Us</h3>
+            <ul className="list-unstyled d-flex gap-3 footer-social">
+              <li>
+                <a href="#">
+                  <i className="bi bi-facebook fs-4" />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i className="bi bi-twitter fs-4" />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i className="bi bi-instagram fs-4" />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i className="bi bi-youtube fs-4" />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i className="bi bi-pinterest fs-4" />
+                </a>
+              </li>
+            </ul>
+          </Col>
+        </Row>
+
+        <Row className="mt-4 pt-3 border-top">
+          <Col md={12} className="text-center">
+            <p className="mb-0 footer-copy">
+              &copy; 2025 Samantha Oprah Colin. All rights reserved.
+            </p>
+          </Col>
+        </Row>
+      </Container>
+    </footer>
+  );
 }
