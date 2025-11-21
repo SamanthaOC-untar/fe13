@@ -3,12 +3,12 @@
   --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 html,
 body {
@@ -39,4 +39,22 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+/* For Contact Section */
+#contact{
+  background: url(/images/map.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* For Footer */
+#footer ul li a{
+  color: #262626;
+  font-weight: 500;
+  text-decoration: none;
+}
+#footer ul li a:hover{
+  text-decoration: underline;
 }

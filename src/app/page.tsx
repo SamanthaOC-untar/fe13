@@ -1,95 +1,62 @@
+'use client';
+
+import React from "react";
+import Navbar from "../../components/navbar";
+import Hero from "../../components/herosection";
+import WorkSection from "../../components/worksection";
+import ServiceSection from "../../components/servicesection";
+import ContactSection from "../../components/contactsection";
+import Footer from "../../components/footer";
+
+import { Container } from "react-bootstrap";
+import Row from "react-bootstrap/Row";
+import Button from "react-bootstrap/Button";
+import Col from "react-bootstrap/Col";
 import Image from "next/image";
-import styles from "./page.module.css";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div>
+      <Navbar />
+      <main>
+        <Hero />
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
+        <Container className="my-5">
+          <Row className="my-4">
+            <Col md={7} className="align-self-center mb-3">
+              <h2>About Us</h2>
+              <h6>What we do?</h6>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, deleniti dolorum! Libero accusantium est commodi nisi, earum enim quis ut. Veniam molestiae placeat esse autem.
+              </p>
+              <Button variant="info">Learn More</Button>
+            </Col>
+
+            <Col md={5}>
+            <p>
+              <Image src = "/images/about.jpeg" alt="About Us" width={400} height={400}>
+              </Image>
+            </p>
+            </Col>
+          </Row>
+        </Container>
+
+        <section className="bg-dark">
+          <WorkSection />
+        </section>
+        
+
+        <ServiceSection/>
+  
+      
+
+        <section id="contact">
+          <ContactSection/>
+        </section>
+       
       </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+    <Footer/>
     </div>
-  );
+  )
 }
